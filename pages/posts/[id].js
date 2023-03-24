@@ -1,6 +1,5 @@
-import { Container, Badge, Link, List, ListItem, Center } from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
-import { Title, WorkImage, Meta } from '../../components/post'
+import { Container, Badge, Center } from '@chakra-ui/react'
+import { Title, WorkImage } from '../../components/post'
 import Layout from '../../components/layouts/Article'
 import Image from 'next/image'
 import sfIcon from '../../public/images/salesforce1.svg'
@@ -36,22 +35,6 @@ const Post = ({ post }) => {
                 </Title>
                 <div dangerouslySetInnerHTML={{ __html: post[0].fs1__Short_Body__c }}>
                 </div>
-                <List ml={4} my={4}>
-                    <ListItem>
-                        <Meta>Website</Meta>
-                        <Link href="https://github.com/Homie980/myreads-reactnd">
-                            https://myreads.netlify.app/ <ExternalLinkIcon mx="2px" />
-                        </Link>
-                    </ListItem>
-                    <ListItem>
-                        <Meta>Platform</Meta>
-                        <span>Website</span>
-                    </ListItem>
-                    <ListItem>
-                        <Meta>Stack</Meta>
-                        <span>React.js</span>
-                    </ListItem>
-                </List>
                 <WorkImage src="/images/works/create-react-app.jpg" alt="react-app1" />
             </Container>
 
