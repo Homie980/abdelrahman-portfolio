@@ -9,10 +9,10 @@ export async function getStaticPaths() {
     const blogs = await res.json()
 
     const paths = blogs.map((blog) => ({
-        params: { id: blog.Id.toString() },
+        params: { id: blog.Id.toString() }, // Might modify here
     }))
 
-    return { paths, fallback: false }
+    return { paths, fallback: 'blocking' } // Here as well
 }
 
 export async function getStaticProps({ params }) {
@@ -22,8 +22,7 @@ export async function getStaticProps({ params }) {
     return {
         props: {
             post
-        },
-        revalidate: 10
+        }
     }
 }
 
